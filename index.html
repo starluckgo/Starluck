@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARLUCK HK Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        body {
+            background-color: #faf8f5;
+            color: #222222;
+            line-height: 1.6;
+        }
+        /* 导航栏 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            border-bottom: 1px solid #e8e4df;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+        /* 首屏 */
+        .hero {
+            padding: 80px 48px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size:16px;
+            opacity:0.75;
+        }
+        /* 产品陈列网格 */
+        .collection-section {
+            padding: 40px 48px;
+        }
+        .collection-title {
+            font-size: 22px;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing:1px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:32px;
+        }
+        .product-card {
+            cursor: pointer;
+        }
+        .product-img-box {
+            background-color: #ede9e3;
+            aspect-ratio:1 /1;
+            overflow:hidden;
+            margin-bottom:14px;
+        }
+        .product-img-box img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .product-name {
+            font-size:15px;
+            font-weight:500;
+        }
+        .product-price {
+            font-size:14px;
+            opacity:0.7;
+            margin-top:4px;
+        }
+        /* About */
+        .about-section {
+            padding:80px 48px;
+            max-width:700px;
+            margin:0 auto;
+            border-top:1px solid #e8e4df;
+        }
+        .about-section h2 {
+            font-size:24px;
+            margin-bottom:20px;
+            text-transform: uppercase;
+            letter-spacing:1px;
+        }
+        .about-section p {
+            font-size:16px;
+            opacity:0.8;
+        }
+        /* Contact */
+        .contact-section {
+            padding:60px 48px;
+            text-align:center;
+            border-top:1px solid #e8e4df;
+        }
+        .contact-section h2 {
+            font-size:24px;
+            margin-bottom:20px;
+            text-transform: uppercase;
+            letter-spacing:1px;
+        }
+        .contact-links a {
+            display:inline-block;
+            margin: 0 12px;
+            color:#222;
+            font-size:16px;
+            text-decoration:none;
+        }
+        .contact-links a:hover {
+            opacity:0.5;
+        }
+        footer {
+            padding:30px;
+            text-align:center;
+            font-size:13px;
+            opacity:0.6;
+            border-top:1px solid #e8e4df;
+        }
+        /* 手机适配 */
+        @media (max-width:768px){
+            nav {
+                padding:18px 20px;
+            }
+            .nav-links a {
+                margin-left:14px;
+                font-size:13px;
+            }
+            .hero {
+                padding:50px 20px;
+            }
+            .hero h1 {
+                font-size:28px;
+            }
+            .collection-section {
+                padding:30px 20px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap:20px;
+            }
+            .about-section, .contact-section {
+                padding:40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav>
+        <div class="logo">STARLUCK</div>
+        <div class="nav-links">
+            <a href="#collections">Collections</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <h1>STARLUCK HK STORE</h1>
+        <p>Minimal handmade jewellery. Bracelets, necklaces, rings & earrings. Bring luck with every piece.</p>
+    </section>
+
+    <!-- 产品陈列 -->
+    <section id="collections" class="collection-section">
+        <h2 class="collection-title">Collections</h2>
+        <div class="product-grid">
+            <!-- ==========產品卡片，你可以複製增加更多========== -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="product1.jpg" alt="Bracelet">
+                </div>
+                <div class="product-name">Simple Bead Bracelet</div>
+                <div class="product-price">HK$128</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="product2.jpg" alt="Necklace">
+                </div>
+                <div class="product-name">Dainty Pendant Necklace</div>
+                <div class="product-price">HK$168</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="product3.jpg" alt="Ring">
+                </div>
+                <div class="product-name">Thin Stack Ring</div>
+                <div class="product-price">HK$98</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="product4.jpg" alt="Earring">
+                </div>
+                <div class="product-name">Minimal Stud Earrings</div>
+                <div class="product-price">HK$88</div>
+            </div>
+            <!-- 再新增就复制上面整块product-card -->
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <h2>About Starluck</h2>
+        <p>STARLUCK is a small handmade jewellery store based in Hong Kong. Every piece is carefully crafted. Inspired by quiet, simple beauty and our two sleepy lucky cats. We create lightweight daily bracelets, necklaces, rings and earrings for everyday wear.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-links">
+            <a href="https://instagram.com/starluckhk">Instagram</a>
+            <a href="https://wa.me/你的whatsapp號碼">WhatsApp</a>
+            <a href="mailto:starluckhk@shturl.">Email</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 STARLUCK HK STORE. All rights reserved.
+    </footer>
+</body>
+</html>
