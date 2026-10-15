@@ -1,129 +1,212 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ocean Cross Bead Bracelet | STARLUCK HK</title>
 <style>
-.top-banner{
-  background:#222;
-  color:#ffffff;
-  text-align:center;
-  padding:10px;
-  font-size:14px;
-}
-.nav-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-}
-.logo{
-  font-size:22px;
-  font-weight:600;
-}
-.hamburger{
-  font-size:28px;
-  cursor:pointer;
-}
-.sidebar-menu{
-  position:fixed;
-  top:0;
-  right:-260px;
-  width:240px;
-  height:100vh;
-  background:#ffffff;
-  padding:40px 20px;
-  transition: 0.3s;
-  z-index:999;
-}
-.sidebar-menu.open{
-  right:0;
-}
-.sidebar-menu a{
-  display:block;
-  padding:12px 0;
-  text-decoration:none;
-  color:#222;
-  font-size:18px;
-}
-.close-btn{
-  font-size:26px;
-  cursor:pointer;
-  position:absolute;
-  top:15px;
-  right:20px;
-}
-/* 產品詳情專用樣式 */
-.product-detail{
-  max-width:1000px;
-  margin: 60px auto;
-  padding:0 40px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:40px;
-}
-.detail-img-box{
-  aspect-ratio:1/1;
-  overflow:hidden;
-}
-.detail-img-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.detail-name{
-  font-size:28px;
-  margin-bottom:12px;
-}
-.detail-price{
-  font-size:22px;
-  opacity:0.7;
-  margin-bottom:24px;
-}
+  :root {
+    --cream: #FAF7F2;
+    --cream-light: #FBF9F6;
+    --text-dark: #3B3732;
+    --text-muted: #7A7570;
+    --rose: #B5838D;
+    --line: #E8E2DB;
+    --banner: #463F3A;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", "PingFang HK", "Microsoft YaHei", sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  .top-banner { background: var(--banner); color: #fff; text-align: center; padding: 12px 20px; font-size: 14px; }
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: var(--cream-light); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
+  .logo-box { display: flex; align-items: center; gap: 12px; }
+  .logo-box img { height: 36px; width: auto; }
+  .brand-name { font-size: 20px; font-weight: 600; letter-spacing: 2px; }
+  .hamburger { font-size: 26px; cursor: pointer; padding: 6px 10px; }
+
+  .sidebar-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: var(--white); padding: 50px 30px; transition: 0.35s ease; z-index: 999; box-shadow: -10px 0 30px rgba(70, 63, 58, 0.08); }
+  .sidebar-menu.open { right: 0; }
+  .sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .sidebar-logo img { height: 32px; }
+  .sidebar-logo span { font-weight: 600; letter-spacing: 2px; }
+  .sidebar-menu a { display: block; padding: 14px 0; font-size: 16px; color: var(--text-dark); border-bottom: 1px solid var(--line); }
+  .sidebar-menu a:hover { color: var(--rose); padding-left: 8px; }
+  .close-btn { position: absolute; top: 18px; right: 20px; font-size: 24px; cursor: pointer; }
+  .overlay { position: fixed; inset: 0; background: rgba(59, 55, 50, 0.35); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+  .overlay.show { opacity: 1; visibility: visible; }
+
+  .product-detail {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+
+  .detail-img-box {
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f3ece4;
+    border: 1px solid var(--line);
+  }
+
+  .detail-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .detail-name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+
+  .detail-price {
+    font-size: 22px;
+    color: var(--rose);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .detail-info h4 {
+    font-size: 15px;
+    margin: 24px 0 10px;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+  }
+
+  .detail-info p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 22px;
+    background: var(--rose);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  .back-link:hover {
+    background: #a3727c;
+  }
+
+  .site-footer { background: var(--banner); color: #fff; padding: 50px 40px 30px; margin-top: 80px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+  .footer-logo img { height: 34px; margin-bottom: 12px; }
+  .footer-logo p { color: #e8e2db; font-size: 14px; }
+  .footer-column h4 { font-size: 15px; margin-bottom: 16px; letter-spacing: 1px; }
+  .footer-column a, .footer-column p { display: block; color: #e8e2db; font-size: 14px; margin-bottom: 10px; }
+  .footer-bottom { text-align: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #c9c0b7; font-size: 13px; }
+
+  @media (max-width: 768px) {
+    .nav-bar { padding: 14px 20px; }
+    .product-detail { grid-template-columns: 1fr; padding: 0 20px; gap: 30px; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
+
 <div class="top-banner">
-買滿三件貨品 即免香港順豐站/櫃/中心自取運費（個別貨品除外）
+  買滿三件貨品 即免香港順豐站 / 櫃 / 中心自取運費（個別貨品除外）
 </div>
 
 <div class="nav-bar">
-  <div class="logo">STARLUCK HK</div>
+  <div class="logo-box">
+    <img src="logo.png" alt="STARLUCK HK Logo" />
+    <span class="brand-name">STARLUCK HK</span>
+  </div>
   <div class="hamburger" onclick="openMenu()">☰</div>
 </div>
 
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
 <div class="sidebar-menu" id="sideMenu">
   <div class="close-btn" onclick="closeMenu()">✕</div>
+  <div class="sidebar-logo">
+    <img src="logo.png" alt="STARLUCK HK Logo" />
+    <span>STARLUCK HK</span>
+  </div>
   <a href="index.html">Home 主頁</a>
   <a href="bracelets.html">Bracelets 手鏈</a>
   <a href="necklaces.html">Necklaces 頸鏈</a>
   <a href="rings.html">Rings 戒指</a>
   <a href="earrings.html">Earrings 耳環</a>
+  <a href="contact.html">Contact 聯絡我們</a>
 </div>
 
 <script>
-function openMenu(){
-  document.getElementById("sideMenu").classList.add("open");
-}
-function closeMenu(){
-  document.getElementById("sideMenu").classList.remove("open");
-}
+  function openMenu() {
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").classList.add("show");
+  }
+  function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
 </script>
 
 <section class="product-detail">
   <div class="detail-img-box">
-    <img src="product1.jpg" alt="Ocean Cross Bead Bracelet">
+    <img src="product1.jpg" alt="Ocean Cross Bead Bracelet" />
   </div>
-  <div>
+
+  <div class="detail-info">
     <h1 class="detail-name">Ocean Cross Bead Bracelet</h1>
     <div class="detail-price">HK$128</div>
-    <p>藍色琉璃珠搭配黑珠與銀色十字吊飾，Vintage風格。</p>
-    <p>材質：不鏽鋼、琉璃、人造黑珍珠</p>
-    <p>尺寸：可調節鏈長</p>
-    <br>
-    <p>備註：每件會有少許差異。</p>
+
+    <p>手工串珠手鏈，藍色琉璃珠搭配黑珠與銀色十字吊飾，柔和 Y2K 復古風格，適合日常疊戴。</p>
+
+    <h4>產品材質</h4>
+    <p>不鏽鋼、琉璃珠、人造黑珍珠、合金吊飾</p>
+
+    <h4>尺寸資訊</h4>
+    <p>鏈長約 16–22cm，可調節</p>
+
+    <h4>保養須知</h4>
+    <p>避免長時間接觸水、香水、乳液。</p>
+    <p>不佩戴時請放進密封袋或首飾盒保存。</p>
+
+    <a href="bracelets.html" class="back-link">← 返回手鏈分類</a>
   </div>
 </section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.png" alt="STARLUCK HK Logo" />
+      <p>溫柔系飾品小店，專注精緻手作與日常搭配。</p>
+    </div>
+    <div class="footer-column">
+      <h4>SHOP 購物分類</h4>
+      <a href="bracelets.html">Bracelets 手鏈</a>
+      <a href="necklaces.html">Necklaces 頸鏈</a>
+      <a href="rings.html">Rings 戒指</a>
+      <a href="earrings.html">Earrings 耳環</a>
+    </div>
+    <div class="footer-column">
+      <h4>CONTACT 聯絡我們</h4>
+      <p>Instagram：starluckhk_store</p>
+      <p>Email：hello@starluckhk.com</p>
+      <p>WhatsApp：+852 9123 4567</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 STARLUCK HK. All rights reserved.</div>
+</footer>
+
 </body>
 </html>
