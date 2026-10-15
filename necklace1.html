@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>塔羅太陽銀吊墜頸鏈 | STARLUCK HK</title>
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --cream-light: #FBF9F6;
+    --text-dark: #3B3732;
+    --text-muted: #7A7570;
+    --rose: #B5838D;
+    --line: #E8E2DB;
+    --banner: #463F3A;
+    --white: #ffffff;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", "PingFang HK", "Microsoft YaHei", sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+
+  .top-banner { background: var(--banner); color: #fff; text-align: center; padding: 12px 20px; font-size: 14px; }
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: var(--cream-light); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
+  .logo-box { display: flex; align-items: center; gap: 12px; }
+  .logo-box img { height: 36px; width: auto; }
+  .brand-name { font-size: 20px; font-weight: 600; letter-spacing: 2px; }
+  .hamburger { font-size: 26px; cursor: pointer; padding: 6px 10px; }
+
+  .sidebar-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: var(--white); padding: 50px 30px; transition: 0.35s ease; z-index: 999; box-shadow: -10px 0 30px rgba(70, 63, 58, 0.08); }
+  .sidebar-menu.open { right: 0; }
+  .sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .sidebar-logo img { height: 32px; }
+  .sidebar-logo span { font-weight: 600; letter-spacing: 2px; }
+  .sidebar-menu a { display: block; padding: 14px 0; font-size: 16px; color: var(--text-dark); border-bottom: 1px solid var(--line); }
+  .sidebar-menu a:hover { color: var(--rose); padding-left: 8px; }
+  .close-btn { position: absolute; top: 18px; right: 20px; font-size: 24px; cursor: pointer; }
+  .overlay { position: fixed; inset: 0; background: rgba(59, 55, 50, 0.35); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 998; }
+  .overlay.show { opacity: 1; visibility: visible; }
+
+  .product-detail {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+
+  .detail-img-box {
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f3ece4;
+    border: 1px solid var(--line);
+  }
+
+  .detail-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .detail-name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+
+  .detail-price {
+    font-size: 22px;
+    color: var(--rose);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .detail-info h4 {
+    font-size: 15px;
+    margin: 24px 0 10px;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+  }
+
+  .detail-info p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .btn-group {
+    display: flex;
+    gap:14px;
+    flex-wrap: wrap;
+    margin-top:30px;
+  }
+
+  .back-link {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--rose);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  .back-link:hover {
+    background: #a3727c;
+  }
+
+  .whatsapp-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color:#25D366;
+    color:#fff;
+    border-radius:999px;
+    font-size:14px;
+    transition:0.3s;
+  }
+  .whatsapp-btn:hover {
+    background-color:#1da851;
+  }
+
+  .site-footer { background: var(--banner); color: #fff; padding: 50px 40px 30px; margin-top: 80px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+  .footer-logo img { height: 34px; margin-bottom: 12px; }
+  .footer-logo p { color: #e8e2db; font-size: 14px; }
+  .footer-column h4 { font-size: 15px; margin-bottom: 16px; letter-spacing: 1px; }
+  .footer-column a, .footer-column p { display: block; color: #e8e2db; font-size: 14px; margin-bottom: 10px; }
+  .footer-column a:hover { color: var(--rose); }
+  .footer-bottom { text-align: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #c9c0b7; font-size: 13px; }
+
+  @media (max-width: 768px) {
+    .nav-bar { padding: 14px 20px; }
+    .product-detail { grid-template-columns: 1fr; padding: 0 20px; gap: 30px; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .btn-group {
+      flex-direction:column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  買滿三件貨品 即免香港順豐站 / 櫃 / 中心自取運費（個別貨品除外）
+</div>
+
+<div class="nav-bar">
+  <div class="logo-box">
+    <img src="logo.png" alt="STARLUCK HK Logo" />
+    <span class="brand-name">STARLUCK HK</span>
+  </div>
+  <div class="hamburger" onclick="openMenu()">☰</div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<div class="sidebar-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+  <div class="sidebar-logo">
+    <img src="logo.png" alt="STARLUCK HK Logo" />
+    <span>STARLUCK HK</span>
+  </div>
+  <a href="index.html">Home 主頁</a>
+  <a href="bracelets.html">Bracelets 手鏈</a>
+  <a href="necklaces.html">Necklaces 頸鏈</a>
+  <a href="rings.html">Rings 戒指</a>
+  <a href="earrings.html">Earrings 耳環</a>
+  <a href="contact.html">Contact 聯絡我們</a>
+</div>
+
+<script>
+  function openMenu() {
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").classList.add("show");
+  }
+  function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
+</script>
+
+<section class="product-detail">
+  <div class="detail-img-box">
+    <img src="images/necklace1.jpg" alt="塔羅太陽銀吊墜頸鏈" />
+  </div>
+
+  <div class="detail-info">
+    <h1 class="detail-name">塔羅太陽銀吊墜頸鏈</h1>
+    <div class="detail-price">HK$198</div>
+
+    <p>復古塔羅主題，吊墜可拆卸，可自由搭配其他串飾，日常穿搭百搭。</p>
+
+    <h4>產品材質</h4>
+    <p>合金鍍銀、鋯石、串飾配件</p>
+
+    <h4>尺寸資訊</h4>
+    <p>鏈長約 40cm + 5cm 延長鏈</p>
+
+    <h4>保養須知</h4>
+    <p>避免長時間接觸水、香水、乳液。</p>
+    <p>不佩戴時請放進密封袋或首飾盒保存。</p>
+
+    <div class="btn-group">
+      <a href="necklaces.html" class="back-link">← 返回頸鏈分類</a>
+      <a href="https://wa.me/85252388577?text=你好，我想查詢【塔羅太陽銀吊墜頸鏈】，請問還有貨嗎？" target="_blank" class="whatsapp-btn">💬 WhatsApp 查詢此產品</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.png" alt="STARLUCK HK Logo" />
+      <p>溫柔系飾品小店，專注精緻手作與日常搭配。</p>
+    </div>
+    <div class="footer-column">
+      <h4>SHOP 購物分類</h4>
+      <a href="bracelets.html">Bracelets 手鏈</a>
+      <a href="necklaces.html">Necklaces 頸鏈</a>
+      <a href="rings.html">Rings 戒指</a>
+      <a href="earrings.html">Earrings 耳環</a>
+    </div>
+    <div class="footer-column">
+      <h4>CONTACT 聯絡我們</h4>
+      <a href="https://instagram.com/starluck.hk" target="_blank">Instagram：starluck.hk</a>
+      <a href="mailto:starluckk.hk@gmail.com">Email：starluckk.hk@gmail.com</a>
+      <a href="https://wa.me/85252388577" target="_blank">WhatsApp：+852 5238 8577</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 STARLUCK HK. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
