@@ -89,9 +89,15 @@
     margin-bottom: 8px;
   }
 
+  .btn-group {
+    display: flex;
+    gap:14px;
+    flex-wrap: wrap;
+    margin-top:30px;
+  }
+
   .back-link {
     display: inline-block;
-    margin-top: 30px;
     padding: 12px 22px;
     background: var(--rose);
     color: #fff;
@@ -104,18 +110,35 @@
     background: #a3727c;
   }
 
+  .whatsapp-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color:#25D366;
+    color:#fff;
+    border-radius:999px;
+    font-size:14px;
+    transition:0.3s;
+  }
+  .whatsapp-btn:hover {
+    background-color:#1da851;
+  }
+
   .site-footer { background: var(--banner); color: #fff; padding: 50px 40px 30px; margin-top: 80px; }
   .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
   .footer-logo img { height: 34px; margin-bottom: 12px; }
   .footer-logo p { color: #e8e2db; font-size: 14px; }
   .footer-column h4 { font-size: 15px; margin-bottom: 16px; letter-spacing: 1px; }
   .footer-column a, .footer-column p { display: block; color: #e8e2db; font-size: 14px; margin-bottom: 10px; }
+  .footer-column a:hover { color: var(--rose); }
   .footer-bottom { text-align: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #c9c0b7; font-size: 13px; }
 
   @media (max-width: 768px) {
     .nav-bar { padding: 14px 20px; }
     .product-detail { grid-template-columns: 1fr; padding: 0 20px; gap: 30px; }
     .footer-inner { grid-template-columns: 1fr; }
+    .btn-group {
+      flex-direction:column;
+    }
   }
 </style>
 </head>
@@ -181,7 +204,11 @@
     <p>避免長時間接觸水、香水、乳液。</p>
     <p>不佩戴時請放進密封袋或首飾盒保存。</p>
 
-    <a href="bracelets.html" class="back-link">← 返回手鏈分類</a>
+    <div class="btn-group">
+      <a href="bracelets.html" class="back-link">← 返回手鏈分類</a>
+      <!-- WhatsApp按鈕，預填產品訊息，已更新你的電話 52388577 -->
+      <a href="https://wa.me/85252388577?text=你好，我想查詢 Ocean Cross Bead Bracelet（HK$128），請問還有貨嗎？" target="_blank" class="whatsapp-btn">💬 WhatsApp 查詢此產品</a>
+    </div>
   </div>
 </section>
 
@@ -200,9 +227,9 @@
     </div>
     <div class="footer-column">
       <h4>CONTACT 聯絡我們</h4>
-      <p>Instagram：starluckhk_store</p>
-      <p>Email：hello@starluckhk.com</p>
-      <p>WhatsApp：+852 9123 4567</p>
+      <a href="https://instagram.com/starluck.hk" target="_blank">Instagram：starluck.hk</a>
+      <a href="mailto:starluckk.hk@gmail.com">Email：starluckk.hk@gmail.com</a>
+      <a href="https://wa.me/85252388577" target="_blank">WhatsApp：+852 5238 8577</a>
     </div>
   </div>
   <div class="footer-bottom">© 2026 STARLUCK HK. All rights reserved.</div>
